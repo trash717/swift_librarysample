@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = true
         // Refresh
+        // テーブルをPullされたときに動くところー
         self.tableView.addPullToRefresh(self.pullToRefresh) {
             if self.updateCnt < 5 { // 5回まで更新可能とする
                 self.updateCnt += 1
@@ -29,7 +30,9 @@ class ViewController: UIViewController {
                 self.tableView.reloadData()
                 self.tableView.endRefreshing(at: .Top)
             } else {
+                // Whisper
                 show(shout: Announcement(title: "もう更新できないよ！"), to: self)
+                // 上部くるくるを止める
                 self.tableView.endRefreshing(at: .Top)
             }
         }
@@ -43,8 +46,8 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let msg = names[indexPath.row] + "選択されたよー"
-        let anc: Announcement = Announcement(title: msg)
-        show(shout: anc, to: self)
+        // Whisper
+        show(shout: Announcement(title: msg), to: self)
     }
 }
 
