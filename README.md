@@ -7,7 +7,7 @@
 - PullToRefresh
   https://github.com/Yalantis/PullToRefresh
 
-![Capture](http://imgur.com/a/6nqvK)
+![Capture](https://cloud.githubusercontent.com/assets/491807/19849785/5ae85538-9f98-11e6-8b4a-b6085fc91595.gif)
   
 ### Setup Project
 1. Install Carthage
